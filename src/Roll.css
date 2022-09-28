@@ -1,0 +1,46 @@
+
+.cinnamon-roll {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+    background-color: white;
+}
+
+.options-box {
+  display: flex;
+  margin-top: 5px;
+}
+
+.options-label {
+  flex: 1;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.options {
+    flex: 2;
+    display: flex;
+    font-size: 12px;
+}
+
+.size { 
+    margin-left: -2.5px;
+    margin-right: 6px;
+    height: 30px;
+    width: 30px;
+}
+
+img{
+  width: 250px;
+  height: 250px;
+}
+
+.roll-picture {
+  border: 3px solid black;
+}
+
+.price-label {
+    font-size: 16px;
+}

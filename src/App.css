@@ -36,3 +36,65 @@
     transform: rotate(360deg);
   }
 }
+
+.tagline {
+  text-align: left;
+  padding-top: 50px;
+  padding-left: 50px;
+  font-size: 20px;
+}
+
+img{
+  width: 50px;
+  height: 50px;
+}
+
+b {
+  text-align: left;
+  padding-top: 12px;
+  font-size: medium;
+}
+
+a:hover  {
+  background-color: yellow;
+}
+
+button.add-to-cart:hover {
+  background-color: yellow;
+}
+
+a {
+  font-weight: bold;
+  
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logo {
+  flex: 30%;
+  padding-left: 10%;
+}
+
+.navbar {
+  padding-top: 30px;
+  flex: 70%;
+  text-align: center;
+}
+
+.navbar-cart {
+  padding-left: 65px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 60px;
+}
+
+body {
+  font-family: 'Futura';
+}
