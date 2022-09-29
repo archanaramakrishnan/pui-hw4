@@ -12,6 +12,7 @@ button {
   margin-top: 5px;
 }
 
+/* To hide the round radio buttons */
 input[type="radio"] {
   border: 0px;
   width: 0%;
@@ -19,6 +20,7 @@ input[type="radio"] {
   visibility: hidden;
 }
 
+/* To highlight the selected radio button in grey */
 .cinnamon-roll input[type="radio"]:checked + label{
   background-color: rgba(182, 182, 182, 0.95);
 }
@@ -38,8 +40,13 @@ input[type="radio"] {
 .size { 
     margin-left: -2.5px;
     margin-right: 6px;
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    font-size: 14px;
+    padding: 1px 2px 1px 2px;
 }
 
 img{

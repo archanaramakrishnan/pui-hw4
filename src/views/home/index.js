@@ -25,7 +25,7 @@ class HomePage extends Component {
         {
           name: "Apple cinammon roll",
           price: "3.49",
-          imageURL: {apple}
+          imageURL: "products/apple-cinnamon-roll.jpg"
         },
         {
           name: "Raisin cinammon roll",
@@ -35,7 +35,7 @@ class HomePage extends Component {
         {
           name: "Walnut cinammon roll",
           price: "3.49",
-          imageURL: {walnut}
+          imageURL: "products/walnut-cinnamon-roll.jpg"
         },
         {
           name: "Double-chocolate cinammon roll",
@@ -48,6 +48,9 @@ class HomePage extends Component {
           imageURL: "products/strawberry-cinnamon-roll.jpg"
         }
       ],
+      
+      editorNoteTitle: "",
+      editorNoteBody: "",
     }
   }
 
@@ -62,14 +65,17 @@ class HomePage extends Component {
           // type={this.state}
           // price=
           // packSize=
+          rollIndex={0}
           imageURL={original}
           rollName={this.state.rollData[0].name} 
           price={this.state.rollData[0].price}  />
         <Roll 
+          rollIndex={1}
           imageURL={apple}
           rollName={this.state.rollData[1].name} 
           price={this.state.rollData[1].price}  />
         <Roll 
+          rollIndex={2}
           imageURL={raisin}
           rollName={this.state.rollData[2].name} 
           price={this.state.rollData[2].price}  />
@@ -77,14 +83,17 @@ class HomePage extends Component {
 
       <div className="list">
         <Roll 
-          imageURL={this.state.rollData[3].image} 
+          rollIndex={3}
+          imageURL={walnut} 
           rollName={this.state.rollData[3].name} 
           price={this.state.rollData[3].price}  />
         <Roll 
+          rollIndex={4}
           imageURL={chocolate}
           rollName={this.state.rollData[4].name} 
           price={this.state.rollData[4].price}  />
         <Roll 
+          rollIndex={5}
           imageURL={strawberry}
           rollName={this.state.rollData[5].name} 
           price={this.state.rollData[5].price}  />

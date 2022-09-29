@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Roll.css';
 
 class Roll extends Component {
+
   render() {
     return (
       <div className="cinnamon-roll">         
@@ -24,24 +25,18 @@ class Roll extends Component {
         <div className="options-box">
           <p className="options-label">Pack size: </p>
           <div className="options">
-            <button type="button" className="size"> 1 </button>
-            <button type="button" className="size"> 3 </button>
-            <button type="button" className="size"> 6 </button>
-            <button type="button" className="size"> 12 </button>
-          </div> 
-          {/* <div className="options">
-              <input type="radio" id="size1-original" className="size" name="original" value="1" checked />
-              <label for="size1-original"><div className="size"> 1 </div></label>
-          
-              <input type="radio" id="size3-original" className="size" name="original" value="3" />
-              <label for="size3-original"><div className="size"> 3 </div></label>
-          
-              <input type="radio" id="size6-original" className="size" name="original" value="6" />
-              <label for="size6-original"><div className="size"> 6 </div></label>
+            <input type="radio" id={`size1-${this.props.rollIndex}`} className="size" value="1" name= {this.props.rollName} /> 
+            <label htmlFor={`size1-${this.props.rollIndex}`}><div className="size"> 1 </div></label>
 
-              <input type="radio" id="size12-original" className="size" name="original" value="12" />
-              <label for="size12-original"><div className="size"> 12 </div></label>
-            </div>     */}
+            <input type="radio" id={`size3-${this.props.rollIndex}`} className="size" value="3" name= {this.props.rollName} /> 
+            <label htmlFor={`size3-${this.props.rollIndex}`}><div className="size"> 3 </div></label>
+
+            <input type="radio" id={`size6-${this.props.rollIndex}`} className="size" value="6" name= {this.props.rollName} /> 
+            <label htmlFor={`size6-${this.props.rollIndex}`}><div className="size"> 6 </div></label>
+
+            <input type="radio" id={`size12-${this.props.rollIndex}`} className="size" value="12" name= {this.props.rollName} /> 
+            <label htmlFor={`size12-${this.props.rollIndex}`}><div className="size"> 12 </div></label>
+          </div>    
         </div> 
   
         <div className="options-box">
