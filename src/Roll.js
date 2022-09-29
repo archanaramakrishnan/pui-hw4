@@ -3,6 +3,56 @@ import './Roll.css';
 
 class Roll extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      rollName: this.props.rollName,
+      price: this.props.price,
+      glazing: "Keep original",
+      packSize: 1,
+      glazingPriceList: { 
+        "Keep original" : 0.00,
+        "Sugar milk" : 0.00,
+        "Vanilla milk" : 0.50,
+        "Double chocolate" : 1.50
+      },
+      packPriceList: {
+        1 : 1,
+        3 : 3,
+        6 : 5,
+        12 : 10
+      }
+    };
+
+    this.state.name = this.props.rollName;
+    this.state.price = this.props.price;
+    this.handleGlazingChange = this.handleGlazingChange.bind(this);
+    this.handlePackSizeChange = this.handlePackSizeChange.bind(this); 
+  }
+
+  handlePackSizeChange = (event) => {
+    const selectedPackSize = event.target.value;
+    this.setState(prevState => ({
+      ...prevState,
+      packSize: selectedPackSize
+    }));
+  };
+
+  handleGlazingChange = (event) => {
+    const selectedGlazing = event.target.value;
+    this.setState(prevState => ({
+      ...prevState,
+      glazing: selectedGlazing
+    }));
+  };
+
+  calculatePrice = () => {
+    let rollPrice = this.props.price;
+    let glazePrice = this.state.glazingPriceList[this.state.glazing];
+    let packPrice = this.state.packPriceList[this.state.packSize];
+    return ((rollPrice + glazePrice) * packPrice).toFixed(2);
+  }
+
   render() {
     return (
       <div className="cinnamon-roll">         
@@ -13,11 +63,11 @@ class Roll extends Component {
             <p className="options-label">Glazing:</p>
             
             <div className="options">
-              <select name="Glazing">
-                <option value="keep-original">Keep original</option>
-                <option value="sugar-milk">Sugar milk</option>
-                <option value="vanilla-milk">Vanilla milk</option>
-                <option value="double-chocolate">Double chocolate</option>
+              <select name="glazing" value={this.state.glazing} onChange={this.handleGlazingChange}>
+                <option value="Keep original">Keep original</option>
+                <option value="Sugar milk">Sugar milk</option>
+                <option value="Vanilla milk">Vanilla milk</option>
+                <option value="Double chocolate">Double chocolate</option>
               </select>
             </div>
         </div>
@@ -25,24 +75,25 @@ class Roll extends Component {
         <div className="options-box">
           <p className="options-label">Pack size: </p>
           <div className="options">
-            <input type="radio" id={`size1-${this.props.rollIndex}`} className="size" value="1" name= {this.props.rollName} /> 
+            <input type="radio" id={`size1-${this.props.rollIndex}`} className="size" value={1} onChange={this.handlePackSizeChange} name= {this.props.rollName} /> 
             <label htmlFor={`size1-${this.props.rollIndex}`}><div className="size"> 1 </div></label>
 
-            <input type="radio" id={`size3-${this.props.rollIndex}`} className="size" value="3" name= {this.props.rollName} /> 
+            <input type="radio" id={`size3-${this.props.rollIndex}`} className="size" value={3} onChange={this.handlePackSizeChange}  name= {this.props.rollName} /> 
             <label htmlFor={`size3-${this.props.rollIndex}`}><div className="size"> 3 </div></label>
 
-            <input type="radio" id={`size6-${this.props.rollIndex}`} className="size" value="6" name= {this.props.rollName} /> 
+            <input type="radio" id={`size6-${this.props.rollIndex}`} className="size" value={6} onChange={this.handlePackSizeChange}  name= {this.props.rollName} /> 
             <label htmlFor={`size6-${this.props.rollIndex}`}><div className="size"> 6 </div></label>
 
-            <input type="radio" id={`size12-${this.props.rollIndex}`} className="size" value="12" name= {this.props.rollName} /> 
+            <input type="radio" id={`size12-${this.props.rollIndex}`} className="size" value={12} onChange={this.handlePackSizeChange}  name= {this.props.rollName} /> 
             <label htmlFor={`size12-${this.props.rollIndex}`}><div className="size"> 12 </div></label>
           </div>    
         </div> 
   
         <div className="options-box">
-          <b className="options-label price-label">$ {this.props.price} </b>
+          <b className="options-label price-label">$ {this.calculatePrice()} </b>
           <div className="options">
-            <button type="button" className="add-to-cart"> Add to cart </button>
+            <button type="button" className="add-to-cart" onClick={this.props.addToCart}> Add to cart </button> 
+            {/* onclick this.props.func(glaze, calculated price, packSize) */}
           </div>
         </div>
       </div>
