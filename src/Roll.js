@@ -5,7 +5,7 @@ class Roll extends Component {
   render() {
     return (
       <div className="cinnamon-roll">         
-        <img src={this.props.imageURL} className="roll-picture" alt="a plain cinnamon roll"/>
+        <img src={this.props.imageURL} className="roll-picture" alt={`a ${this.props.rollName} ${this.props.imageURL}`} />
         <b> {this.props.rollName} </b>
   
         <div className="options-box">
@@ -28,8 +28,21 @@ class Roll extends Component {
             <button type="button" className="size"> 3 </button>
             <button type="button" className="size"> 6 </button>
             <button type="button" className="size"> 12 </button>
-          </div>      
-        </div>
+          </div> 
+          {/* <div className="options">
+              <input type="radio" id="size1-original" className="size" name="original" value="1" checked />
+              <label for="size1-original"><div className="size"> 1 </div></label>
+          
+              <input type="radio" id="size3-original" className="size" name="original" value="3" />
+              <label for="size3-original"><div className="size"> 3 </div></label>
+          
+              <input type="radio" id="size6-original" className="size" name="original" value="6" />
+              <label for="size6-original"><div className="size"> 6 </div></label>
+
+              <input type="radio" id="size12-original" className="size" name="original" value="12" />
+              <label for="size12-original"><div className="size"> 12 </div></label>
+            </div>     */}
+        </div> 
   
         <div className="options-box">
           <b className="options-label price-label">$ {this.props.price} </b>

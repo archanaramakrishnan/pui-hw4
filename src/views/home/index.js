@@ -12,6 +12,45 @@ import NavBar from '../../NavBar.js';
 
 
 class HomePage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rollData: [
+        {
+          name: "Original cinammon roll",
+          price: "2.49",
+          imageURL: "products/original-cinnamon-roll.jpg"
+          //TODO: add alt text here
+        },
+        {
+          name: "Apple cinammon roll",
+          price: "3.49",
+          imageURL: {apple}
+        },
+        {
+          name: "Raisin cinammon roll",
+          price: "2.99",
+          imageURL: "products/raisin-cinnamon-roll.jpg"
+        },
+        {
+          name: "Walnut cinammon roll",
+          price: "3.49",
+          imageURL: {walnut}
+        },
+        {
+          name: "Double-chocolate cinammon roll",
+          price: "3.99",
+          imageURL: "products/double-chocolate-cinnamon-roll.jpg"
+        },
+        {
+          name: "Strawberry cinammon roll",
+          price: "3.99",
+          imageURL: "products/strawberry-cinnamon-roll.jpg"
+        }
+      ],
+    }
+  }
+
   render() {
     return (
         <div className="App">
@@ -19,32 +58,36 @@ class HomePage extends Component {
 
       <div className="list">
         <Roll 
-          imageURL={original} 
-          rollName="Original cinammon roll"
-          price="2.49" />
+          // type, price, glazing and packSize
+          // type={this.state}
+          // price=
+          // packSize=
+          imageURL={original}
+          rollName={this.state.rollData[0].name} 
+          price={this.state.rollData[0].price}  />
         <Roll 
-          imageURL={apple} 
-          rollName="Apple cinammon roll"
-          price="3.49" />
+          imageURL={apple}
+          rollName={this.state.rollData[1].name} 
+          price={this.state.rollData[1].price}  />
         <Roll 
-          imageURL={raisin} 
-          rollName="Raisin cinammon roll"
-          price="2.99" />
+          imageURL={raisin}
+          rollName={this.state.rollData[2].name} 
+          price={this.state.rollData[2].price}  />
       </div>
 
       <div className="list">
         <Roll 
-          imageURL={walnut} 
-          rollName="Walnut cinammon roll"
-          price="3.49" />
+          imageURL={this.state.rollData[3].image} 
+          rollName={this.state.rollData[3].name} 
+          price={this.state.rollData[3].price}  />
         <Roll 
-          imageURL={chocolate} 
-          rollName="Double-chocolate cinammon roll"
-          price="3.99" />
+          imageURL={chocolate}
+          rollName={this.state.rollData[4].name} 
+          price={this.state.rollData[4].price}  />
         <Roll 
-          imageURL={strawberry} 
-          rollName="Strawberry cinammon roll"
-          price="3.99" />
+          imageURL={strawberry}
+          rollName={this.state.rollData[5].name} 
+          price={this.state.rollData[5].price}  />
       </div>
     </div>
     );

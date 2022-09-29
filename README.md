@@ -1,3 +1,7 @@
+# pui-hw3
+Programming Usable Interfaces Assignment 3, ReactJS interface for a bakery shop
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
