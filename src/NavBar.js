@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './NavBar.css';
 import logo from './logo/logo-01.svg';
+import Cart from './Cart';
 
 
 class NavBar extends Component {
@@ -11,8 +12,12 @@ class NavBar extends Component {
         <div className="navbar">
           <a>PRODUCTS </a>
           <b className="navbar-cart">CART</b>
-          <p className="cart-status">{this.props.itemCount} item</p>
-          <p className="cart-status">Total: $ {this.props.totalPrice}</p>
+          <div id="cart-status">
+            <Cart/>
+            <p>{this.props.itemCount} item</p>
+            <p>Total: $ {this.props.totalPrice}</p>
+          </div>
+          
           <hr/>
           <p className="tagline">Our hand-made cinnamon rolls</p>
         </div>

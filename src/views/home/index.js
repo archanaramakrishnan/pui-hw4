@@ -18,6 +18,7 @@ class HomePage extends Component {
     this.state = {
       cart: [],
       cartTotalPrice: 0,
+      currentRoll: {},
       rollData: [
         {
           name: "Original cinammon roll",
@@ -70,19 +71,29 @@ class HomePage extends Component {
       ...prevState,
       cart: [...prevState.cart, roll]
     }))
-    
+    this.setState(prevState => ({
+      ...prevState,
+      currentRoll: roll
+    }))
+
+    let popup = document.getElementById("myPopup");
+    console.log(popup);
+    console.log(popup.classList);
+    popup.classList.toggle("show");
   }
 
   render() {
+    console.log("this.state.currentRoll", this.state.currentRoll)
     return (
         <div className="App">
       <NavBar
         itemCount= {this.state.cart.length}
         totalPrice= {this.state.cartTotalPrice.toFixed(2)}
+        cartRoll= {this.state.currentRoll}
       />
-      <Cart 
+      {/* <Cart 
         rollList= {this.state.cart}
-      />
+      /> */}
       <div className="list">
         <Roll
           rollIndex={0}
