@@ -1,8 +1,7 @@
 #cart-status {
-  padding-right: 20%;
+  padding-top: 12px;
+  padding-right: 350px;
   text-align: right;
-  /* padding-top: 12px; */
-  font-size: medium;
   font-size: 14px;
 }
 

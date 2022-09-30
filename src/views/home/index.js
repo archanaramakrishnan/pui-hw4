@@ -77,31 +77,27 @@ class HomePage extends Component {
     }))
 
     let popup = document.getElementById("myPopup");
-    console.log(popup);
-    console.log(popup.classList);
     popup.classList.toggle("show");
+    
+    setTimeout(() => {popup.classList.toggle("show")}, 3000);
   }
 
   render() {
     console.log("this.state.currentRoll", this.state.currentRoll)
     return (
-        <div className="App">
-      <NavBar
-        itemCount= {this.state.cart.length}
-        totalPrice= {this.state.cartTotalPrice.toFixed(2)}
-        cartRoll= {this.state.currentRoll}
-      />
-      {/* <Cart 
-        rollList= {this.state.cart}
-      /> */}
-      <div className="list">
+      <div className="App">
+          <NavBar
+            itemCount= {this.state.cart.length}
+            totalPrice= {this.state.cartTotalPrice.toFixed(2)}
+            cartRoll= {this.state.currentRoll}
+          />
+        <div className="list">
         <Roll
           rollIndex={0}
           imageURL={original}
           rollName={this.state.rollData[0].name} 
           price={this.state.rollData[0].price}
           addToCart={this.showCart}  /> 
-          {/* this.props.func can be called in Roll.js -> with price, etc.  this wil update the cart */}
         <Roll 
           rollIndex={1}
           imageURL={apple}
