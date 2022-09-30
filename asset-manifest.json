@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pui-hw4/static/css/main.37e3387e.css",
-    "main.js": "/pui-hw4/static/js/main.9ededef4.js",
+    "main.css": "/pui-hw4/static/css/main.70b04f0b.css",
+    "main.js": "/pui-hw4/static/js/main.6af7eec0.js",
     "static/js/787.d9fef60d.chunk.js": "/pui-hw4/static/js/787.d9fef60d.chunk.js",
     "static/media/apple-cinnamon-roll.jpg": "/pui-hw4/static/media/apple-cinnamon-roll.49f60af85b0e955dad15.jpg",
     "static/media/double-chocolate-cinnamon-roll.jpg": "/pui-hw4/static/media/double-chocolate-cinnamon-roll.dc7182fd330f44e75603.jpg",
@@ -11,12 +11,12 @@
     "static/media/logo-01.svg": "/pui-hw4/static/media/logo-01.b2f9cdda6d5cda1ce2ffc47e6b747dd4.svg",
     "static/media/walnut-cinnamon-roll.jpg": "/pui-hw4/static/media/walnut-cinnamon-roll.e51000e24310a638db27.jpg",
     "index.html": "/pui-hw4/index.html",
-    "main.37e3387e.css.map": "/pui-hw4/static/css/main.37e3387e.css.map",
-    "main.9ededef4.js.map": "/pui-hw4/static/js/main.9ededef4.js.map",
+    "main.70b04f0b.css.map": "/pui-hw4/static/css/main.70b04f0b.css.map",
+    "main.6af7eec0.js.map": "/pui-hw4/static/js/main.6af7eec0.js.map",
     "787.d9fef60d.chunk.js.map": "/pui-hw4/static/js/787.d9fef60d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.37e3387e.css",
-    "static/js/main.9ededef4.js"
+    "static/css/main.70b04f0b.css",
+    "static/js/main.6af7eec0.js"
   ]
 }
