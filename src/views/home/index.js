@@ -9,17 +9,19 @@ import strawberry from '../../products/strawberry-cinnamon-roll.jpg';
 
 import Roll from '../../Roll.js';
 import NavBar from '../../NavBar.js';
+import Cart from '../../Cart.js';
 
 
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // add a cart list with roll objects
+      cart: [],
+      cartTotalPrice: 0,
       rollData: [
         {
           name: "Original cinammon roll",
-          price: 2.49, //TODO: remove Number
+          price: 2.49,
           imageURL: "products/original-cinnamon-roll.jpg"
           //TODO: add alt text here
         },
@@ -53,7 +55,17 @@ class HomePage extends Component {
     }
   }
 
-  addToCart = () => {
+  showCart = (rollName, glazing, packSize, totalPrice) => {
+    const roll = {
+      name: rollName,
+      glaze: glazing, 
+      pack: packSize,
+      price: totalPrice
+    }
+    this.setState(prevState => ({
+      ...prevState,
+      cart: [...prevState.cart, roll]
+    }))
     
   }
 
@@ -61,29 +73,29 @@ class HomePage extends Component {
     return (
         <div className="App">
       <NavBar/>
-      {/* cart component */}
+      <Cart 
+        rollList= {this.state.cart}
+      />
       <div className="list">
-        <Roll 
-          // type, price, glazing and packSize
-          // type={this.state}
-          // price=
-          // packSize=
+        <Roll
           rollIndex={0}
           imageURL={original}
           rollName={this.state.rollData[0].name} 
           price={this.state.rollData[0].price}
-          func={this.addToCart()}  /> 
+          addToCart={this.showCart}  /> 
           {/* this.props.func can be called in Roll.js -> with price, etc.  this wil update the cart */}
         <Roll 
           rollIndex={1}
           imageURL={apple}
           rollName={this.state.rollData[1].name} 
-          price={this.state.rollData[1].price}  />
+          price={this.state.rollData[1].price}
+          addToCart={this.showCart}  /> 
         <Roll 
           rollIndex={2}
           imageURL={raisin}
           rollName={this.state.rollData[2].name} 
-          price={this.state.rollData[2].price}  />
+          price={this.state.rollData[2].price}
+          addToCart={this.showCart}    />
       </div>
 
       <div className="list">
@@ -91,17 +103,20 @@ class HomePage extends Component {
           rollIndex={3}
           imageURL={walnut} 
           rollName={this.state.rollData[3].name} 
-          price={this.state.rollData[3].price}  />
+          price={this.state.rollData[3].price}
+          addToCart={this.showCart}    />
         <Roll 
           rollIndex={4}
           imageURL={chocolate}
           rollName={this.state.rollData[4].name} 
-          price={this.state.rollData[4].price}  />
+          price={this.state.rollData[4].price}
+          addToCart={this.showCart}    />
         <Roll 
           rollIndex={5}
           imageURL={strawberry}
           rollName={this.state.rollData[5].name} 
-          price={this.state.rollData[5].price}  />
+          price={this.state.rollData[5].price}
+          addToCart={this.showCart}    />
       </div>
     </div>
     );

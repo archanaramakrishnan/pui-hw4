@@ -23,6 +23,10 @@ input[type="radio"] {
 /* To highlight the selected radio button in grey */
 .cinnamon-roll input[type="radio"]:checked + label{
   background-color: rgba(182, 182, 182, 0.95);
+  height: 25px;
+  width: 25px;
+  margin-right: 5px;
+  padding-left: -1px;
 }
 
 .options-label {
