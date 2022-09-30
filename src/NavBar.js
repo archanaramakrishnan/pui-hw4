@@ -9,8 +9,10 @@ class NavBar extends Component {
         <header>
         <img className="logo" src={logo} alt="logo of the bun bun bake shop which is a doodle of a cinammon roll"/>
         <div className="navbar">
-          <a className="navbar-products">PRODUCTS</a>
+          <a>PRODUCTS </a>
           <b className="navbar-cart">CART</b>
+          <p className="cart-status">{this.props.itemCount} item</p>
+          <p className="cart-status">Total: $ {this.props.totalPrice}</p>
           <hr/>
           <p className="tagline">Our hand-made cinnamon rolls</p>
         </div>

@@ -64,6 +64,10 @@ class HomePage extends Component {
     }
     this.setState(prevState => ({
       ...prevState,
+      cartTotalPrice: prevState.cartTotalPrice + Number(roll.price)
+    }));
+    this.setState(prevState => ({
+      ...prevState,
       cart: [...prevState.cart, roll]
     }))
     
@@ -72,7 +76,10 @@ class HomePage extends Component {
   render() {
     return (
         <div className="App">
-      <NavBar/>
+      <NavBar
+        itemCount= {this.state.cart.length}
+        totalPrice= {this.state.cartTotalPrice.toFixed(2)}
+      />
       <Cart 
         rollList= {this.state.cart}
       />
